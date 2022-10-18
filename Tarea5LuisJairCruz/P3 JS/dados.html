@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content
+		="width=device-width, initial-scale=1.0">
+	<title>Dice Game</title>
+
+	<style>
+		.container {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.dice {
+			text-align: center;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		body {
+			background-color: #042f4b;
+			margin: 0;
+		}
+
+		h1 {
+			margin: 30px;
+			font-family: "Lobster", cursive;
+			text-shadow: 5px 0 #232931;
+			font-size: 4.5rem;
+			color: #4ecca3;
+			text-align: center;
+		}
+
+		p {
+			font-size: 2rem;
+			color: #4ecca3;
+			font-family: "Indie Flower", cursive;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.bottom {
+			padding-top: 30px;
+		}
+
+		.butn {
+			background: #4ecca3;
+			font-family: "Indie Flower", cursive;
+			border-radius: 7px;
+			color: #ffff;
+			font-size: 30px;
+			padding: 16px 25px 16px 25px;
+			text-decoration: none;
+		}
+
+		.butn:hover {
+			background: #232931;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Let's Play</h1>
+
+		<div class="dice">
+			<p class="Player1">Player 1</p>
+			<img class="img1" src="dice6.png">
+		</div>
+
+		<div class="dice">
+			<p class="Player2">Player 2</p>
+			<img class="img2" src="dice6.png">
+		</div>
+
+		<div class="dice">
+			<p class="Player3">Player 3</p>
+			<img src="dice6.png" class="img3">
+		</div>
+
+
+
+	</div>
+
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="rollTheDice()">
+			Roll the Dice
+		</button>
+	</div>
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="editNames()">
+			Edit Names
+		</button>
+	</div>
+
+	<div class="container bottom">
+		<p>Puntos actuales:</p>
+		<p id="j1"> Jugador 1</p>
+		<p id="j2"> Jugador 2</p>
+		<p id="j3"> Jugador 3</p>
+	</div>
+
+	<script>
+
+		// Player name
+		var player1 = "Player 1";
+		var player2 = "Player 2";
+		var player3 = "Player 3"
+
+		// Function to change the player name
+		function editNames() {
+			player1 = prompt("Change Player1 name");
+			player2 = prompt("Change player2 name");
+			player3 = prompt("Change player3 name")
+
+			document.querySelector("p.Player1")
+							.innerHTML = player1;
+							
+			document.querySelector("p.Player2")
+							.innerHTML = player2;
+
+			document.querySelector("p.Player3")
+							.innerHTML = player3;
+		}
+
+
+		//variables para ganador final 
+		var contPlayer1=0;
+		var contPlayer2=0;
+		var contPlayer3=0;
+		var bandera=false;
+
+		// Function to roll the dice
+		function rollTheDice() {
+			setTimeout(function () {
+				var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+				var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+				var randomNumber3 = Math.floor(Math.random() *6 ) + 1;
+
+				document.querySelector(".img1").setAttribute("src",
+					"dice" + randomNumber1 + ".png");
+
+				document.querySelector(".img2").setAttribute("src",
+					"dice" + randomNumber2 + ".png");
+				
+				document.querySelector(".img3").setAttribute("src",
+					"dice" + randomNumber3 + ".png");
+
+				
+
+				if ((randomNumber2 > randomNumber1) && (randomNumber2 > randomNumber3)) {
+					document.querySelector("h1").innerHTML
+						= (player2 + " WINS!");
+				}
+
+				else if ((randomNumber1 > randomNumber2) && (randomNumber1 > randomNumber3)) {
+					document.querySelector("h1").innerHTML
+						= (player1 + " WINS!");
+				}else if((randomNumber3 >randomNumber1)&&(randomNumber3 > randomNumber1)){
+					document.querySelector("h1").innerHTML
+						= (player3 + " WINS!");
+
+				}else  {
+					document.querySelector("h1").innerHTML = "Draw!";
+				}
+
+
+
+
+				//aumentando los putos de los jugadores
+				contPlayer1+=randomNumber1;
+				contPlayer2+=randomNumber2;
+				contPlayer3+=randomNumber3;
+
+				//mostrando los puntos actuales
+				const j1= document.getElementById("j1");
+				const j2= document.getElementById("j2");
+				const j3= document.getElementById("j3");
+
+				j1.textContent=player1+": "+contPlayer1;
+				j2.textContent=player2+": "+contPlayer2;
+				j3.textContent=player3+": "+contPlayer3;
+
+
+				setTimeout( function (){
+			//alertas
+
+			if(contPlayer1>=21){
+					window.alert("Ganador final es "+player1);
+					bandera=true;
+				}
+				if(contPlayer2>=21){
+					window.alert("Ganador final es "+player2);
+					bandera=true;
+				}
+				if(contPlayer3>=21){
+					window.alert("Ganador final es "+player3);
+					bandera=true;
+				}
+
+				if(bandera){
+					contPlayer1=0; contPlayer2=0; contPlayer3=0;
+					window.alert("Los puntos se reinician a 0 \n El primero en llegar a 21 gana");
+					bandera=false;
+				j1.textContent=player1+": "+contPlayer1;
+				j2.textContent=player2+": "+contPlayer2;
+				j3.textContent=player3+": "+contPlayer3;
+
+				}
+
+
+
+
+		},1000)
+
+
+				
+
+
+			}, 1500);
+
+			
+
+			
+
+			
+
+		}
+
+
+		 
+
+	</script>
+</body>
+
+</html>

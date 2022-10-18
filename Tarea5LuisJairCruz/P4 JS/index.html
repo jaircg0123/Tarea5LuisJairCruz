@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+ <div class="container">
+
+    <!--coin-->
+    <div class="coin" id="coin">
+        <!--aguila-->
+        <div class="aguila">
+            <img src="cara1.png" alt="">
+        </div>
+
+        <div class="sol">
+            <img src="cara2.png" alt="">
+        </div>
+
+    </div>
+
+    <!--formulario-->
+
+    <div class="form">
+        <p>Elige Aquí: </p>
+    
+        
+        <form class="formulario">
+
+            <div class="contenedor-formulario">
+                <div>
+                    <input type="radio" id="radio1" name="cara" > 
+                    <label for="radio1" class="inputs">Aguila</label>
+                </div>
+    
+                <div>
+                    <input type="radio" id="radio2" name="cara">
+                    <label for="radio2" class="inputs">Sol</label>
+    
+                </div>
+
+            </div>
+
+
+            
+            
+        </form>
+
+    </div>
+
+    <!--button-->
+
+    <div class="buttons">
+        <button id="flip-button">Flip Coin</button>
+    </div>
+
+</div>
+
+<div class="resultado">
+    <p id="resultado"></p>
+</div>
+
+
+    <script type="text/javascript">
+
+        //constantes 
+        let coin=document.querySelector(".coin");
+        let flipBtn=document.querySelector("#flip-button");
+
+
+    flipBtn.addEventListener("click", () => {
+    let i = Math.floor(Math.random() * 2);
+    coin.style.animation = "none";
+    if(i){
+        //i==1, el resultado es aguila
+        setTimeout(function(){
+            coin.style.animation = "spin-aguila 3s forwards";
+        }, 100);
+
+
+        document.getElementById('resultado').textContent="";
+        
+        setTimeout(function(){
+            if((document.getElementById('radio1').checked)){
+            document.getElementById('resultado').textContent="GANASTE!";
+            
+            
+
+        }else{
+            document.getElementById('resultado').textContent="PERDISTE";
+        
+            
+        }
+
+        },3000);
+        
+    }
+    else{
+
+        //i==0
+        setTimeout(function(){
+            coin.style.animation = "spin-sol 3s forwards";
+        }, 100);
+    
+
+        document.getElementById('resultado').textContent="";
+
+        setTimeout(function(){
+            if((document.getElementById('radio2').checked)){
+            document.getElementById('resultado').textContent="GANASTE!";
+            
+            
+        }else{
+            document.getElementById('resultado').textContent="PERDISTE";
+        
+        
+        }
+
+         },3000);
+        
+
+        
+    }
+
+    disableButton();
+});
+
+        function disableButton(){
+            flipBtn.disabled= true;
+            setTimeout(function(){
+                flipBtn.disabled=false;
+            },3000);
+        }
+
+
+
+    </script>
+
+
+
+
+ 
+    
+</body>
+</html>

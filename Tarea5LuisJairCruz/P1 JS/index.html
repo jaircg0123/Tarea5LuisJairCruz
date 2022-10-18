@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumeroMayor</title>
+</head>
+
+
+<body>
+
+    <h1>Número Mayor</h1>
+
+    <script>
+
+        let dato1, dato2, num1, num2;
+
+        dato1 = window.prompt("Introduce primer número ?", "0"); //Pedimos el primer numero
+        num1 = parseInt(dato1);//transformamos la entrada a un entero
+
+        dato2 = window.prompt("Introduce segundo número ?", "0"); //pedimos el segundo numero
+        num2 = parseInt(dato2); //transformamos la entrada a un entero
+
+
+        if(num1>num2){
+
+            document.write(`<br/> <br/> ${num1} es el numero Mayor` );
+
+        }else if(num1==num2){
+
+            document.write(`<br/> <br/> Los números son iguales ` );
+
+
+        }else{
+
+            document.write(`<br/> <br/>${num2} es el numero mayor` );
+
+        }
+       </script>
+
+
+       <p>Las entradas deben ser núnumeros enteros</p>
+
+    
+    
+</body>
+</html>
