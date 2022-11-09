@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EquipoDeComputo>
+
+   <equipo>
+
+        <modelo>Laptop Huawei MateBook</modelo>
+        <marca>Huawei</marca>
+        <precio>11 999.00</precio>
+
+   </equipo>
+       
+
+   <equipo>
+        <modelo>Laptop HP 15-DW1056</modelo>
+        <marca>HP</marca>
+        <precio>7 999.00</precio>
+   
+   </equipo>
+
+   <equipo>
+        <modelo>Laptop Gamer DELL Inspiron Ryzen 5</modelo>
+        <marca>Dell</marca>
+        <precio>13 599.00</precio>
+   
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Asus VivoBook</modelo>
+      <marca>Asus</marca>
+      <precio>6 999.00</precio>
+
+   </equipo>
+     
+   <equipo>
+      <modelo>Laptop Lenovo Thinkpad L560</modelo>
+      <marca>Lenovo</marca>
+      <precio>8 495.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Lenovo Thinkpad L560</modelo>
+      <marca>Lenovo</marca>
+      <precio>8 495.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Lenovo Thinkpad L560</modelo>
+      <marca>Lenovo</marca>
+      <precio>8 495.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop HP Pavillion x360</modelo>
+      <marca>HP</marca>
+      <precio>14 999.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Apple Imac</modelo>
+      <marca>Apple</marca>
+      <precio>9 999.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Gamer Asus-ROG</modelo>
+      <marca>Asus</marca>
+      <precio>28 209.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Asus TUF-15</modelo>
+      <marca>Asus</marca>
+      <precio>15 193.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop HP Touch 15z</modelo>
+      <marca>HP</marca>
+      <precio>11 499.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>MacBook Air 2020</modelo>
+      <marca>Apple</marca>
+      <precio>13 000.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Inspiron 15 </modelo>
+      <marca>Dell</marca>
+      <precio>10 350.00</precio>
+   </equipo>
+
+   <equipo>
+      <modelo>Laptop Asus VivoBook</modelo>
+      <marca>Asus</marca>
+      <precio>11 999.00</precio>
+   </equipo>
+
+
+
+</EquipoDeComputo>
+
+
+
+
+
